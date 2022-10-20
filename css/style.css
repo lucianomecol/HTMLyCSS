@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  /*border: solid 2px red;*/
+  /*border: solid 2px red;*/  /*este borde es solo una guia, lo comento y lo descomento cuando lo necesito*/
 }
 
 body {
@@ -125,6 +125,88 @@ nav {
 }
 
 
+/*agregados para el menu responsive*/
+
+
+.fa-bars {
+  font-size: 2.5rem;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: none;
+}
+
+#check__menu {
+  display: none;
+}
+
+#label__check {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: none;
+  padding-top: 0.9rem;
+  padding-left: 0.7rem;
+}
+
+@media screen and (max-width: 768px) {
+  .search input {
+    display: none;
+  }
+  .container__header {
+    padding: 0.6rem;
+  }
+  .list {
+    flex-direction: column;
+    background-color: #023868;
+    position: fixed;
+    left: 0;
+    top: 10rem;
+    width: 33%;
+    height: 0px;
+    transition: all 300ms ease;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .list > li > a {
+    font-size: 1rem;
+    padding: 0.2rem;
+    justify-content: center;
+  }
+  .list > li > a:hover {
+    transform: scale(1);
+  }
+  .sub__menu {
+    left: 5.6rem;
+  }
+  .list > li:hover ul {
+    z-index: 11;
+  }
+  .list > li:first-child a {
+    background-position: 1.2rem;
+  }
+  #selected {
+    transform: scale(1);
+  }
+  #label__check {
+    display: block;
+  }
+  .fa-bars {
+    display: flex;
+  }
+  #check__menu:checked ~ nav > ul {
+    height: 18.75rem;
+    visibility: visible;
+    opacity: 1;
+  }
+  .logo img {
+    width: 10rem;
+  }
+}
+
+
 /*main y inicio*/
 
 
@@ -154,7 +236,6 @@ nav {
 
 .imagen__inicio {
   width: 100%;
-  /* height: 100%;  Esto deforma las imagenes */
 }
 
 .parrafo__inicio {
@@ -162,9 +243,41 @@ nav {
   font-size: 4rem;
 }
 
+@media screen and (max-width: 1200px) {
+  .parrafo__inicio {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .parrafo__inicio {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .parrafo__inicio {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .parrafo__inicio {
+    font-size: 1.2rem;
+  }
+}
+
 
 /*Productos*/
 
+
+.productos__info {
+  font-family: 'Times New Roman', Times, serif;
+  color: darkslategrey;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 0 5% 0 5%;
+}
 
 .prueba__container{
   display: flex;
@@ -176,8 +289,8 @@ nav {
 .prueba__productos{
   position: relative;
   background-color: white;
-  margin: 3.12rem;
-  padding: 1.56rem;
+  margin: 2.5rem;
+  padding: 1rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -199,8 +312,8 @@ nav {
 }
 
 .imagen img{
-  height: 25rem;
-  width: 25rem;
+  height: 18rem;
+  width: 18rem;
 }
 
 .prueba__productos:hover{
@@ -264,6 +377,46 @@ nav {
   text-decoration: line-through;
 }
 
+.video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3.1rem;
+  
+}
+
+.responsive-embed {
+  width: 800px;
+  height: 400px;
+}
+
+@media screen and (max-width: 1024px) {
+  .productos__info{
+    font-size: 1.4rem;
+  }
+  .responsive-embed {
+    width: 600px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .responsive-embed {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .productos__info{
+    font-size: 0.9rem;
+  }
+  .responsive-embed {
+    width: 300px;
+    height: 150px;
+  }
+}
+
 
 /*secciones dentro de productos*/
 
@@ -274,14 +427,6 @@ nav {
   text-align: center;
   padding: 3.1rem 0rem 5rem 0rem;
   font-size: 3.8rem;
-}
-
-.productos__info {
-  font-family: 'Times New Roman', Times, serif;
-  color: darkslategrey;
-  font-size: 1.6rem;
-  text-align: center;
-  padding: 0 5% 0 5%;
 }
 
 .productos {
@@ -333,9 +478,16 @@ nav {
   font-weight: 800;
 }
 
-.video{
-  text-align: center;
-  padding-bottom: 3.1rem;
+@media screen and (max-width: 1024px) {
+  .productos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .productos {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 
@@ -347,7 +499,7 @@ nav {
   color: black;
   text-align: center;
   padding: 3.1rem 0rem 5rem 0rem;
-  font-size: 3.75rem;
+  font-size: 4rem;
 }
 
 .foto__local {
@@ -366,9 +518,48 @@ nav {
 .info__nosotros {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 2rem;
   text-align: center;
   padding: 2.5rem 9.4rem 5rem 9.4rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .conocenos {
+    font-size: 3.2rem;
+  }
+  .info__nosotros {
+    padding: 2rem 8rem 4.3rem 8rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .conocenos {
+    font-size: 2.8rem;
+  }
+  .info__nosotros {
+    font-size: 1.8rem;
+    padding: 1.7rem 6.5rem 3.8rem 6.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .conocenos {
+    font-size: 2.5rem;
+  }
+  .info__nosotros {
+    font-size: 1.4rem;
+    padding: 1rem 5rem 4rem 5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .conocenos {
+    font-size: 2.2rem;
+  }
+  .info__nosotros {
+    font-size: 1rem;
+    padding: 0.7rem 3.5rem 3rem 3.5rem;
+  }
 }
 
 
@@ -376,8 +567,6 @@ nav {
 
 
 .container__formulario {
-  width: 100%;
-  max-width: 75rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3.1rem;
@@ -398,7 +587,7 @@ nav {
 
 .campo,
 textarea {
-  width: 100%;
+  width: 33rem;
   padding: 1rem 0.6rem;
   font-size: 1rem;
   margin-bottom: 1.3rem;
@@ -406,21 +595,64 @@ textarea {
 }
 
 .info__formulario textarea {
-  max-width: 33rem;
-  min-width: 33rem;
-  min-height: 8.8rem;
-  max-height: 9.4rem;
+  width: 33rem;
+  height: 9rem;
 }
 
 .boton__enviar {
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   border: none;
   outline: 0px;
   background: orange;
   color: white;
   cursor: pointer;
   margin-bottom: 1.9rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .info__formulario textarea {
+    width: 20.5rem;
+    height: 9rem;
+  }
+  .campo, textarea {
+    width: 20.5rem;
+  }
+  .boton__enviar{
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container__formulario{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .info__formulario textarea {
+    width: 30rem;
+    height: 9rem;
+  }
+  .campo, textarea {
+    width: 30rem;
+  }
+  .boton__enviar{
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container__formulario{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .info__formulario textarea {
+    width: 20.5rem;
+    height: 9rem;
+  }
+  .campo, textarea {
+    width: 20.5rem;
+  }
+  .boton__enviar{
+    font-size: 1.1rem;
+  }
 }
 
 
@@ -454,8 +686,12 @@ footer {
   transform: scale(1.7);
 }
 
-
-.responsive-embed {
-  width: 100%;
-  height: 100%;
+@media screen and (max-width: 768px) {
+  .container__footer{
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  .redes__sociales a i {
+    font-size: 1.4rem;
+  }
 }
