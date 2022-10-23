@@ -454,6 +454,7 @@ nav {
   height: 12.5rem;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .producto__imagen > img {
@@ -478,6 +479,33 @@ nav {
   font-weight: 800;
 }
 
+.producto__imagen > .iconos{
+  position: absolute;
+  bottom:0; 
+  left:0; 
+  right:0;
+  display: flex;
+  background-color: #0074c7;
+  opacity: 0;
+}
+
+.producto:hover .producto__imagen .iconos{
+  bottom:0;
+  opacity: 1;
+  transition: all 400ms ease;
+}
+
+.producto__imagen .iconos a{
+  height: 4rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  width:50%;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1024px) {
   .productos {
     grid-template-columns: repeat(2, 1fr);
@@ -487,6 +515,8 @@ nav {
 @media screen and (max-width: 768px) {
   .productos {
     grid-template-columns: repeat(1, 1fr);
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
 
