@@ -15,6 +15,7 @@ header {
     &__logo {
       img {
         width: 15.62rem;
+        height: 6.5rem;
     
         &:hover {
         @include sombra1;
@@ -137,6 +138,7 @@ header {
       &__logo {
         img {
           width: 10rem;
+          height: 4.2rem;
         }
       }
     }

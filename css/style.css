@@ -28,7 +28,8 @@ header {
     align-items: center;
     justify-content: space-between; }
     header .header__logo img {
-      width: 15.62rem; }
+      width: 15.62rem;
+      height: 6.5rem; }
       header .header__logo img:hover {
         box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
         transform: scale(1.1); }
@@ -108,7 +109,8 @@ header {
     header .header__search input {
       display: none; }
     header .header__logo img {
-      width: 10rem; }
+      width: 10rem;
+      height: 4.2rem; }
   .list {
     flex-direction: column;
     background-color: #023868;
